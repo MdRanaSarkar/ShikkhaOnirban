@@ -1,0 +1,152 @@
+
+{% load static %}
+      <!--====== HEADER PART START ======-->
+    
+    <header id="header-part">
+       
+        <div class="header-top d-none d-md-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <div class="header-contact text-lg-left text-center">
+                            <ul>
+                                <li><img src="{%static ''%}images/all-icon/call.png" alt="icon"><span>+880{{setting.phone}}</span></li>
+                                <li><img src="{%static ''%}images/all-icon/email.png" alt="icon"><span>{{setting.email}}</span></li>
+                                <li><img src="{%static ''%}images/all-icon/map.png" alt="icon"><span>{{setting.address_short}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="header-social text-lg-right text-center">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header top -->
+        
+        <div class="navigation navigation-2">
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-lg-11 col-md-10 col-sm-9 col-9">
+                        <nav class="navbar navbar-expand-lg" style="margin-left:-10px;">
+                            <a class="navbar-brand" href="{%url 'home'%}">
+                                <img src="{{setting.IconURL}}" style="height:40px ;width:120px; " alt="Logo">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="active" href="{%url 'home'%}">Home</a>
+                                     
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{%url 'about'%}">About us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{%url 'Course_all' %}">Courses</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{%url 'all_event' %}">Events</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="teachers.html">Our teachers</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="teachers.html">teachers</a></li>
+                                            <li><a href="teachers-singel.html">teacher Singel</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{%url 'product'%}">Shop</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{%url 'contact_dat'%}">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav> <!-- nav -->
+                    </div>
+                    <div class="col-lg-1 col-md-2 col-sm-3 col-3">
+
+                        <div class="right-icon text-center">
+                            <ul>
+                                {% if user.id is not None %}
+                                       <li class="text-lg-right capitalize" style="margin-left: -104%;font-style: bold;font: italic bold 12px/30px Georgia, serif;">
+                                    <a title="{{user.username}}" href="{%url 'user_panel'%}"><i class="fa fa-user sub-menu">
+                                      
+                                    </i></a>
+                            
+                                {% else %}
+                                   <li class="text-lg-right capitalize" style="margin-left: -104%;font-style: bold;font: italic bold 12px/30px Georgia, serif;">
+                                    <a title="Login/SingUp" href="{%url 'user_login'%}"><i class="fa fa-user sub-menu">
+                                      
+                                    </i></a>
+                                    {% endif %}
+                              
+                                </li>
+                                <li><a href="#" id="search"><i class="fa fa-search"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-bag"></i><span>0</span></a></li>
+                               
+                  
+            
+    
+
+                                
+                            </ul>
+                        </div> <!-- right icon -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div>
+        
+    </header>
+    
+    <!--====== HEADER PART ENDS ======-->
+   
+    <!--====== SEARCH BOX PART START ======-->
+    
+    <div class="search-box">
+        <div class="serach-form">
+            <div class="closebtn">
+                <span></span>
+                <span></span>
+            </div>
+            <form action="#">
+                <input type="text" placeholder="Search by keyword">
+                <button><i class="fa fa-search"></i></button>
+            </form>
+        </div> <!-- serach form -->
+    </div>
+    
+    <!--====== SEARCH BOX PART ENDS ======-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

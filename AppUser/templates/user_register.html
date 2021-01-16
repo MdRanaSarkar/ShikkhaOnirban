@@ -1,0 +1,156 @@
+    
+   {% extends "index.html" %} 
+     {% load crispy_forms_tags %}
+    {% load static %}
+
+
+
+
+    {% block header %}
+ 
+         {% include "header.html" %}
+  {% endblock header %}
+       {% block event %}
+      
+
+
+
+<section id="page-banner" class="pt-45 pb-120 bg_cover" data-overlay="8" style="background-image: url({%static ''%}images/page-banner-6.jpg); max-height: 50px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12"style="text-align: center">
+                    <div class="page-banner-cont text-center">
+                        <h2>SignUp</h2>
+                        <nav aria-label="breadcrumb" style="display: inline-block;">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item text-center"><a href="{%url 'home'%}">Home</a></li>
+                                <li class="breadcrumb-item active text-center" aria-current="page">register</li>
+                            </ol>
+                        </nav>
+                    </div>  <!-- page banner cont -->
+                </div>
+            </div> <!-- row -->
+
+        </div> <!-- container -->
+    </section>
+   
+<section id="contact-page" class="pt-10 pb-100 gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="contact-from  mt--5" >
+                        <div class="section-title">
+                            <h4>Congrats</h4>
+                     
+                               <div>
+    {%if messages %} {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}" role="alert">
+        {{message}}
+    </div>
+    {% endfor %} {% endif %}
+</div>
+                            
+                            <h3 class="mt-2 mb-3 active">Register From Here</h3>
+                        </div> <!-- section title -->
+                       <div class="page-section mb-60">
+                <div class="container">
+                    <div class="row">
+          
+                                <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                            <form  method="POST">
+                                {% csrf_token %}
+                                <div class="login-form">
+                                   
+                                    <div class="row">
+                                           <div class="col-md-12 mb-20">
+                                               {{ form.username|as_crispy_field }}
+                                        </div>
+                                        <div class="col-md-6 col-12 mb-20">
+                                    {{ form.first_name|as_crispy_field }}
+                                        </div>
+                                        <div class="col-md-6 col-12 mb-20">
+                                           {{ form.last_name|as_crispy_field }}
+                                        </div>
+                                        <div class="col-md-12 mb-20">
+                                            {{ form.email|as_crispy_field }}
+                                        </div>
+                                        <div class="col-md-6 mb-20">
+                                            {{ form.password1|as_crispy_field }}
+                                        </div>
+                                        <div class="col-md-6 mb-20">
+                                         {{ form.password2|as_crispy_field }}
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="register-button mt-0">Register</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                   
+                    </div>
+                </div>
+            </div>
+            <!-- Login Content Area End Here -->
+
+
+                    </div> <!--  contact from -->
+                </div>
+                <div class="col-lg-5">
+                    <div class="contact-address mt--5">
+                        <ul>
+                            <li>
+                                <div class="singel-address">
+                                    <div class="icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="cont">
+                                        <p>143 castle road 517 district, kiyev port south Canada</p>
+                                    </div>
+                                </div> <!-- singel address -->
+                            </li>
+                            <li>
+                                <div class="singel-address">
+                                    <div class="icon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <div class="cont">
+                                        <p>+3 123 456 789</p>
+                                        <p>+1 222 345 342</p>
+                                    </div>
+                                </div> <!-- singel address -->
+                            </li>
+                            <li>
+                                <div class="singel-address">
+                                    <div class="icon">
+                                        <i class="fa fa-envelope-o"></i>
+                                    </div>
+                                    <div class="cont">
+                                        <p>info@yourmail.com</p>
+                                        <p>info@yourmail.com</p>
+                                    </div>
+                                </div> <!-- singel address -->
+                            </li>
+                        </ul>
+                    </div> <!-- contact address -->
+                    <div class="map mt-30">
+                        <div id="contact-map"></div>
+                    </div> <!-- map -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== CONTACT PART ENDS ======-->
+
+
+   
+
+
+
+   
+
+    {% endblock %}
+    {% block footer %}
+    {% include "footer.html" %}
+{% endblock footer %} 
